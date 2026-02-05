@@ -17,6 +17,13 @@ const reasons = [
 const modal = document.getElementById("modal");
 const modalText = document.getElementById("modalText");
 
+function startExperience() {
+  const cover = document.getElementById("cover");
+  const main = document.getElementById("main");
+  cover.style.display = "none";
+  main.classList.remove("hidden");
+}
+
 function showReason(index) {
   modalText.textContent = reasons[index];
   modal.classList.add("show");
@@ -25,9 +32,8 @@ function showReason(index) {
 function closeModal() {
   modal.classList.remove("show");
 }
-function startExperience() {
-  const cover = document.getElementById("cover");
-  const main = document.getElementById("main");
-  cover.style.display = "none";
-  main.classList.remove("hidden");
-}
+
+// Optional: close modal when clicking outside the card
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) closeModal();
+});
