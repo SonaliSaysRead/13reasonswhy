@@ -25,3 +25,9 @@ function showReason(index) {
 function closeModal() {
   modal.classList.remove("show");
 }
+function startExperience() {
+  const cover = document.getElementById("cover");
+  const main = document.getElementById("main");
+  cover.style.display = "none";
+  main.classList.remove("hidden");
+}
